@@ -96,8 +96,7 @@ $('#positionForm').on('submit', function(e) {
         },
         success: function(response) {
             alert('Position created successfully!');
-            console.log(response);
-            $('#positionForm')[0].reset(); // optional reset
+              location.reload();
         },
         error: function(xhr) {
             if (xhr.status === 422) {
@@ -128,12 +127,12 @@ $(document).on('click', '.delete-btn', function(e) {
         url: '/api/positions/' + positionId,
         type: 'DELETE',
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Needed if CSRF protection is enabled
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function(response) {
             alert('Position deleted successfully.');
-            // You can either remove the DOM element or reload the page
-            location.reload(); // or $(this).closest('tr').remove() for table rows
+
+            location.reload();
         },
         error: function(xhr) {
             if (xhr.status === 422 && xhr.responseJSON?.error) {

@@ -38,13 +38,7 @@ class PositionAPIController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        // // Check if we're trying to create a second root position
-        // if (is_null($request->reports_to)) {
-        //     $rootExists = Position::whereNull('reports_to')->exists();
-        //     if ($rootExists) {
-        //         return response()->json(['error' => 'Only one root position can exist'], 422);
-        //     }
-        // }
+
 
         $position = Position::create($request->all());
 
@@ -88,23 +82,6 @@ class PositionAPIController extends Controller
         return response()->json($position);
     }
 
-     public function storePosition(Request $request) {
-              $validator = Validator::make($request->all(), [
-            'name' => 'required|string|unique:positions',
-
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-          $position = Position::create([
-        'name' => $request->input('name')
-    ]);
-
-        return response()->json($position, 201);
-    }
-
     /**
      * Remove the specified resource from storage.
      */
@@ -129,7 +106,7 @@ class PositionAPIController extends Controller
 
         $position = Position::with('parent', 'children')->get();
 
-        
+
         return response()->json($position);
     }
 

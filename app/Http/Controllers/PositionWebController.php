@@ -11,7 +11,7 @@ class PositionWebController extends Controller
     public function index()
     {
         $positions = Position::with('parent')
-            ->orderBy('name')
+            ->orderBy('id','asc')
             ->get();
 
         return view('positions.index', compact('positions'));
