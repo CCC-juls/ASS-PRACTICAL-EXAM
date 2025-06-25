@@ -27,6 +27,8 @@ Node.js (for frontend assets)
 Laravel 10
 
 ===============================================
+
+
 Installation
 
 1. Clone the repository: 
@@ -44,6 +46,8 @@ npm install
 
 
 ===============================================
+
+
 Database Setup
 
 1. Run migrations:
