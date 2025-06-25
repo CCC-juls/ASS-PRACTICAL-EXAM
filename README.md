@@ -10,10 +10,13 @@ Define reporting relationships between positions
 Form validation for position names and reporting structure
 
 
-RESTful API endpoints for integration
+ API endpoints for integration
 
 
 =================================================
+
+
+
 Prerequisites
 
 PHP 8.2 
