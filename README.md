@@ -13,7 +13,7 @@ Form validation for position names and reporting structure
 RESTful API endpoints for integration
 
 
-===============================================
+=================================================
 Prerequisites
 
 PHP 8.2 
@@ -26,7 +26,7 @@ Node.js (for frontend assets)
 
 Laravel 10
 
-=========================================
+===============================================
 Installation
 
 1. Clone the repository: 
